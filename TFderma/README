@@ -1,0 +1,21 @@
+TRAINING
+sudo python retrain.py --image_dir trainfolder
+
+
+sudo python retrain.py --output_graph=retrained_graph.pb --output_label=retrained_labels.txt --image_dir train_skin
+
+
+
+
+WITH OPTIONS
+python {$your-working_directory}/retrain.py
+--bottleneck_dir=/{$your-working_directory}/bottlenecks         
+--how_many_training_steps 500
+--model_dir=/{$your-working_directory}/inception
+--output_graph=/{$your-working_directory}/retrained_graph.pb
+--output_labels=/{$your-working_directory}/retrained_labels.txt
+--image_dir /{$your-working_directory}/${your_training_data_path}
+
+
+TEST
+python test.py test_image
