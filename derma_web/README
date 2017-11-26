@@ -1,0 +1,5 @@
+DERMA VISION
+
+To start server : python manage.pr runserver
+
+Go to http://127.0.0.1:8000/.

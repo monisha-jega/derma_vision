@@ -1,0 +1,110 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'diagnosis/result.css' %}" />
+<link href="{% static 'diagnosis/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="{% static 'diagnosis/result.js' %}"></script>
+ -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+
+    <div class="jumbotron" id="j1">
+  <h1>{{jsres}}</h1> </div>
+
+
+<br>
+
+<div class="jumbotron" id="j2">   
+  <p>{{jstreat}}</p> 
+</div>
+
+      
+      
+
+
+      
+    </div>
+
+
+    <div class="col-sm-6">
+       
+    
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+       ok1 = 1;
+       var ok2;
+      var latv, longv;
+     
+      var map;
+      var infowindow;
+
+      function initMap() {
+
+        var pyrmont = {lat: 12.9891487, lng: 80.22920920000001};         
+         	
+          navigator.geolocation.getCurrentPosition(function(position) {
+          window.ok1 = position.coords.latitude;
+          window.ok2 = position.coords.longitude;
+           
+          });
+          var ok = {lat : window.ok1, long : window.ok2};
+		  // window.alert(12.9891487 + " " +  window.ok1);
+      
+      // window.alert(12.9891487 + " " +  ok.lat)
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['hospital']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+
+
+
+
+
+    </script>
+
+
+<div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvYq8gwdbkj13uoAhJ1nPav60_0RihmPw&libraries=places&callback=initMap" async defer></script>
+
+
+
+
+    </div>    
+  </div>
+</div>

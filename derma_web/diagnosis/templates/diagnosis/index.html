@@ -1,0 +1,71 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'diagnosis/index.css' %}" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'diagnosis/index.js' %}"></script>
+
+<script>
+
+$(document).ready(function(){
+	var my_var = '{{ jsdata|escapejs }}';
+	print_result(my_var);
+});
+</script>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="col-sm-3 col-sm-offset-4 frame" style="">
+            <ul></ul>
+            <div>
+                <div class="msj-rta macro" style="margin:auto">                        
+                    <div class="text text-r" id="textinput">
+                        <input class="mytext" placeholder="Type a message"/>
+                    </div> 
+
+
+                    <div class = "imgupload">
+                    	 <form method="post" enctype="multipart/form-data" id="imgform">
+							  {% csrf_token %}
+
+							    <input type="file" name="sentFile" id="fileid" onchange="this.form.submit()" /> <!-- <label for="fileid"> IMAGE </label> -->
+
+							   <!--  <button id="close" class="closing" onClick="thisFileUpload()">
+							    <img id="imgbutton" src="https://image.flaticon.com/icons/svg/3/3901.svg" />
+							    </button>
+							    <br> -->
+							    <!-- <input type="submit" name="submit" id="subid" value="Upload">  -->
+
+							    <!-- <button id="close2" class="closing" onClick="thisFileUpload1()">
+							    <img id="imgbutton2" src="http://www.freeiconspng.com/uploads/green-arrow-png-0.png" /> -->
+							    <!-- </button> -->
+
+							    </input>
+							</form>
+					</div>
+                </div>
+
+            </div>
+        </div>        
+    </body>
+</html>
+
+<script>
+        function thisFileUpload() {
+            window.alert("hi");
+            document.getElementById("fileid").click();
+            document.getElementById("imgform").submit();
+        };
+
+
+         function thisFileUpload1() {
+            document.getElementById("subid").click();
+        };
+
+       
+
+//         $("#fileid").onchange(function () {
+// $("#imgform").submit();
+// });
+</script>

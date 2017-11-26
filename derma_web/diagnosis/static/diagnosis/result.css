@@ -1,0 +1,31 @@
+
+
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+
+div#j1.jumbotron
+ {
+ 	margin-top : 3%;
+ 	font-size: 25px;
+ 	padding: 5px;
+ }
+
+
+
+#j2
+ {
+ 	margin-top : 0%;
+ 	padding: 3px;
+ 	font-size: 10px;
+ }
