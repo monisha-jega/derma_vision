@@ -1,4 +1,4 @@
-# The Skin Disease Classification Network
+## The Skin Disease Classification Network
 
 ### TRAINING
 
