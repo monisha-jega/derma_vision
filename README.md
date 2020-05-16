@@ -13,7 +13,8 @@ The Inception network, the then state-of-the-art convolution neural network for 
 #### To run the web application:
 Run:
 ```
-python manage.py derma_web/runserver
+cd derma_web
+python manage.py runserver
 ```
-And, go to http://127.0.0.1:8000/
+And, go to https://localhost:8000/
 
