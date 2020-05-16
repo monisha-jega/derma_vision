@@ -18,6 +18,8 @@ python {$your-working_directory}/retrain.py
 --image_dir /{$your-working_directory}/${your_training_data_path}
 ```
 
+### TESTING
+
 To test the model:
 ```
 python test.py test_image
