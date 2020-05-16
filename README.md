@@ -10,7 +10,7 @@ A dataset was created by scraping annotated images of diseased skin as well as h
 The Inception network, the then state-of-the-art convolution neural network for image classification, was fine-tuned on these annotated images to create our skin disease classification system in the backend. 
 
 
-### To run the web application:
+#### To run the web application:
 Run:
 ```
 python manage.py derma_web/runserver
