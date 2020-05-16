@@ -1,6 +1,6 @@
 # DermaVision - A Skin Disease Diagnostic System
 
-### This is a automatic skin disease diagnostic system built for the Microsoft code.fun.do Contest held at the Indian Institute of Technology in 2017. 
+### This is a automatic skin disease diagnostic system built for the Microsoft code.fun.do Contest held at the Indian Institute of Technology.
 
 It is a web application that has an interactive chat-like interface.
 It attempts to diagnose skin diseases based on images of the person's skin.
