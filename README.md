@@ -7,7 +7,7 @@ It attempts to diagnose skin diseases based on images of the person's skin.
 The project employs the django web development framework, and the tensorflow library for deep learning. 
 
 A dataset was created by scraping annotated images of diseased skin as well as healthy skin from the web. 
-The Inception network, the then state-of-the-art convolution neural network for image classification, was fine-tuned on these annotated images to create out skin disease classification system in the backend. 
+The Inception network, the then state-of-the-art convolution neural network for image classification, was fine-tuned on these annotated images to create our skin disease classification system in the backend. 
 
 
 ### To run the web application:
